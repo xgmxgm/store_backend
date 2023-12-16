@@ -8,7 +8,7 @@ import * as UserController from "./controllers/UserController.js";
 import * as PaymentController from "./controllers/PaymentController.js";
 import * as UploadController from "./controllers/UploadController.js";
 
-mongoose.connect("mongodb+srv://ernarkalkabekov:N9thY4RuJhrlQUaO@cluster0.bjqpvb4.mongodb.net/Users?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log("connect to DB!"))
     .catch((err) => console.log("not connect to DB!", err))
 
