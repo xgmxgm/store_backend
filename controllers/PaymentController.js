@@ -14,7 +14,7 @@ export const PaymentCreate = async (req, res) => {
     try {
         const reqData = req.body;
 
-        const checkout = new YooCheckout({shopId: "shop id", secretKey: "this secret key"});
+        const checkout = new YooCheckout({shopId: process.env.SHOPID, secretKey: process.env.SECRETKEY});
         const idempotenceKey = generateRandomString(24);
 
         const createPayload = {
@@ -49,7 +49,7 @@ export const PaymentConfirm = async (req, res) => {
     try {
         const reqData = req.body;
 
-        const checkout = new YooCheckout({ shopId: 'shop id', secretKey: 'this secret key' });
+        const checkout = new YooCheckout({ shopId: process.env.SHOPID, secretKey: process.env.SECRETKEY });
         const paymentId = reqData.paymentId.replace(/"/g, "");
         const idempotenceKey = generateRandomString(24);
 
