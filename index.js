@@ -38,6 +38,6 @@ app.listen(PORT, (err) => {
     if (err) {
         console.log(err)
     }
-    
+    console.log("MONGO DB URI: ", process.env.MONGODB_URI)
     console.log(`Servar start http://localhost:${PORT}`)
 })
