@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import fileUpload from "express-fileupload";
+import 'dotenv/config.js'
 
 import { registerValidator } from "./validations/auth.js";
 import * as UserController from "./controllers/UserController.js";
@@ -37,6 +38,6 @@ app.listen(PORT, (err) => {
     if (err) {
         console.log(err)
     }
-
+    
     console.log(`Servar start http://localhost:${PORT}`)
 })
